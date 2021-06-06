@@ -13,6 +13,6 @@ defmodule ArgxExample.MixProject do
   end
 
   def application, do: [extra_applications: [:logger], mod: {ArgxExample.Application, []}]
-  defp deps, do: [{:argx, "~> 1.1.1"}]
+  defp deps, do: [{:argx, "~> 1.1.2"}]
   defp aliases, do: [test: ["format", "test"]]
 end
