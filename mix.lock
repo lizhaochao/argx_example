@@ -1,0 +1,3 @@
+%{
+  "argx": {:hex, :argx, "1.1.1", "e2ce14c10d1d94bb646231e6267dcad5dfb75954041cd402cfc8eaf88d9a0cbc", [:mix], [], "hexpm", "c7a774cbdeb7042315189a6ad5bb9f2e3262a6a9ef481b595ed276b2ae3117b9"},
+}
