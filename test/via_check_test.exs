@@ -1,4 +1,4 @@
-defmodule ArgxUsageTest do
+defmodule ViaCheckUsageTest do
   use ExUnit.Case
 
   ### AuthCenter ###
