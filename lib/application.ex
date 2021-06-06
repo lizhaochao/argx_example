@@ -1,4 +1,9 @@
 defmodule ArgxExample.Application do
+  @moduledoc """
+  Docs Links:
+  Gitee: https://gitee.com/lizhaochao/argx
+  Github: https://github.com/lizhaochao/Argx
+  """
   use Application
 
   @impl true

@@ -1,4 +1,9 @@
 defmodule ViaCheckUsageTest do
+  @moduledoc """
+  Docs Links:
+  Gitee: https://gitee.com/lizhaochao/argx
+  Github: https://github.com/lizhaochao/Argx
+  """
   use ExUnit.Case
 
   ### AuthCenter ###
@@ -60,6 +65,6 @@ defmodule ViaCheckUsageTest do
   end
 
   test "get_list - error" do
-    %{error_msg: [error_type: [:begin_time]], result: -10001} = Book.get_list(1.2, nil, 1, 20)
+    %{error_msg: [error_type: [:begin_time]], result: -10_001} = Book.get_list(1.2, nil, 1, 20)
   end
 end
