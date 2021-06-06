@@ -4,7 +4,7 @@ defmodule Share.Configs do
   Gitee: https://gitee.com/lizhaochao/argx
   Github: https://github.com/lizhaochao/Argx
   """
-  use Argx
+  use Argx.Defconfig
 
   defconfig(IDRule, id(:integer, :auto))
   defconfig(NameRule, name(:string))
@@ -21,6 +21,10 @@ defmodule Share.Configs do
       page_size(:integer, :auto) || 10
     ]
   )
+
+  ### Callback, effect User & Book modules.
+  def fmt_errors({:error, err}), do: %{result: -10_001, error_msg: err}
+  def fmt_errors(new_args), do: Map.new(new_args)
 end
 
 defmodule AuthCenter do
@@ -31,6 +35,10 @@ defmodule AuthCenter do
     [username(:string) || "ljy", password(:string)]
   )
 
+  ### Callback, Only effect current module.
+  def fmt_errors({:error, err}), do: %{result: -1, error_msg: err}
+  def fmt_errors(new_args), do: Keyword.new(new_args)
+
   def sign_in(username, password) do
     with(
       params <- [username: username, password: password],
@@ -40,7 +48,7 @@ defmodule AuthCenter do
       :ok
     else
       false -> :username_or_password_wrong
-      {:error, ["error type: password"]} -> :error
+      err -> err
     end
   end
 end

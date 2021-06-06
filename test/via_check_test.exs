@@ -11,7 +11,7 @@ defmodule ArgxUsageTest do
   end
 
   test "sign_in - error" do
-    assert :error == AuthCenter.sign_in("ljy", 460_200)
+    %{error_msg: [error_type: [:password]], result: -1} = AuthCenter.sign_in("ljy", 460_200)
   end
 
   ### User ###
@@ -57,5 +57,9 @@ defmodule ArgxUsageTest do
   test "get_list - ok" do
     result = Book.get_list(nil, nil, 1, 20)
     %{begin_time: 0, end_time: 1_622_961_616, page: 1, page_size: 20} = Map.new(result)
+  end
+
+  test "get_list - error" do
+    %{error_msg: [error_type: [:begin_time]], result: -10001} = Book.get_list(1.2, nil, 1, 20)
   end
 end
