@@ -32,12 +32,12 @@ end
 defmodule User do
   use Argx, share: Share.Configs
 
-  defconfig(RoleRule, _(:integer, :auto))
+  defconfig(RoleRule, _(:integer, :autoconvert))
   defconfig(RolesRule, roles({:list, RoleRule}))
 
   defconfig(
     UpdateUserRule,
-    [institution(:integer, :auto), users({:list, UserRule})]
+    [institution(:integer, :autoconvert), users({:list, UserRule})]
   )
 
   def create_user(params), do: check(params, [NameRule, MobileRule, RolesRule])
@@ -48,8 +48,8 @@ end
 defmodule Book do
   use Argx, share: Share.Configs
 
-  defconfig(PagesRule, pages(:integer, :auto))
-  defconfig(IsPublishRule, is_publish(:boolean, :auto) || false)
+  defconfig(PagesRule, pages(:integer, :autoconvert))
+  defconfig(IsPublishRule, is_publish(:boolean, :autoconvert) || false)
 
   def create_book(name, pages, is_publish) do
     params = %{name: name, pages: pages, is_publish: is_publish}

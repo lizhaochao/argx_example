@@ -1,4 +1,4 @@
 %{
-  "argx": {:hex, :argx, "1.1.3", "dae799f8684dc565855db7aed46ac0d6e3ab13306ff0ea3abdfa38437a470ed2", [:mix], [{:atomic_map, "~> 0.9.3", [hex: :atomic_map, repo: "hexpm", optional: false]}], "hexpm", "649ae9c8a81f5985d1633af132f2a2743e88e3140655fbb4d6e383ca7daeb9f2"},
+  "argx": {:hex, :argx, "1.1.4", "a30664964805496111d5970081d26a1960c2abb3e903e3c8cb6aea4f842a2a94", [:mix], [{:atomic_map, "~> 0.9.3", [hex: :atomic_map, repo: "hexpm", optional: false]}], "hexpm", "4562480c056774533a37b77bcfb553676e1bcd8b418f3ef1b92a22432c9211a0"},
   "atomic_map": {:hex, :atomic_map, "0.9.3", "3c7f1302e0590164732d08ca999708efbb2cd768abf2911cf140280ce2dc499d", [:mix], [], "hexpm", "c237babf301bd2435bd85b96cffc973022b4cbb7721537059ee0dd3bb74938d2"},
 }

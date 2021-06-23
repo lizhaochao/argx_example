@@ -6,19 +6,19 @@ defmodule Share.Configs do
   """
   use Argx.Defconfig
 
-  defconfig(IDRule, id(:integer, :auto))
+  defconfig(IDRule, id(:integer, :autoconvert))
   defconfig(NameRule, name(:string))
-  defconfig(MobileRule, mobile(:integer, :auto))
+  defconfig(MobileRule, mobile(:integer, :autoconvert))
 
-  defconfig(UserRule, [id(:integer, :auto), addr(:string), age(:integer, :auto)])
+  defconfig(UserRule, [id(:integer, :autoconvert), addr(:string), age(:integer, :autoconvert)])
 
   defconfig(
     ListRules,
     [
-      begin_time(:integer, :auto) || 0,
-      end_time(:integer, :auto) || Helper.get_curr_ts(),
-      page(:integer, :auto) || 0,
-      page_size(:integer, :auto) || 10
+      begin_time(:integer, :autoconvert) || 0,
+      end_time(:integer, :autoconvert) || Helper.get_curr_ts(),
+      page(:integer, :autoconvert) || 0,
+      page_size(:integer, :autoconvert) || 10
     ]
   )
 

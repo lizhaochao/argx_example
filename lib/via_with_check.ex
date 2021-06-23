@@ -22,7 +22,7 @@ defmodule Warehouse do
 
   defconfig(AddrRule, addr(:string))
 
-  defconfig(TypeListRule, _(:integer, :auto))
+  defconfig(TypeListRule, _(:integer, :autoconvert))
   defconfig(CameraListRule, [ip(:string), location(:string)])
   defconfig(AddrMapRule, [city(:string), town(:string)])
 
@@ -37,7 +37,7 @@ defmodule Warehouse do
 
   ### Nested Data
   with_check configs(
-               type(:integer, :auto) || big_type(),
+               type(:integer, :autoconvert) || big_type(),
                NameRule,
                AddrRule,
                CargoesRule
@@ -56,7 +56,7 @@ defmodule Warehouse do
 
   ### Check Box Functionality
   with_check configs(
-               id(:integer, :auto, :checkbox),
+               id(:integer, :autoconvert, :checkbox),
                number(:string, :checkbox)
              ) do
     def get_one(id, number) do
@@ -66,7 +66,7 @@ defmodule Warehouse do
 
   ### Radio Box Functionality
   with_check configs(
-               id(:integer, :auto, :radio),
+               id(:integer, :autoconvert, :radio),
                number(:string, :radio)
              ) do
     def get_many(id, number) do
